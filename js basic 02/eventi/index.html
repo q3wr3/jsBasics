@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js basics - eventi</title>
+</head>
+<body>
+
+<div>
+	<span onclick="this.innerHTML = Date()">Klik za data</span>
+</div>
+<div>
+	<span class="data" onclick="prikazhiDatum()">Klik za data</span>
+</div>
+<div>
+	<span onclick="prikazhiDatum2(this)">Klik za data</span>
+</div>
+
+
+<div class="dbl" style="background: green; height: 100px;width: 300px;border:1px solid black;" onDblClick="dblClickEvent(this)" onMouseEnter="me()" onMouseLeave="ml()" onMouseDown="md()" onMouseUp="mu()" > Double Click to change color </div>
+
+<script type="text/javascript">
+	function prikazhiDatum(){
+		document.querySelector('.data').innerHTML = Date();
+	}
+
+	function prikazhiDatum2(e){
+		e.innerHTML = Date();
+	}
+
+
+	/*==================================================================*/
+
+	function dblClickEvent(e){
+		console.log(e.style.backgroundColor)
+		if (e.style.backgroundColor == 'red'){
+			e.style.backgroundColor = 'green'
+		}else{
+			e.style.backgroundColor = 'red'
+		}
+		
+	}
+	/*=====================================================================*/
+
+	function me(){
+		console.log('mouseEnter')
+	}
+	function ml(){
+		console.log('mouseLeave')
+	}
+	function mu(){
+		console.log('mouseUp')
+	}
+	function md(){
+		console.log('mouseDown')
+	}
+
+	/*=======================================================================*/
+
+
+
+/*	document.addEventListener('keyup',(e) => {
+		console.log(e.key)
+	})*/
+
+	/*function getSelectedText() {
+	    if (window.getSelection) {
+	        return window.getSelection().toString();
+	    } else if (document.selection) {
+	        return document.selection.createRange().text;
+	    }
+	    return '';
+	}*/
+</script>
+</body>
+</html>
