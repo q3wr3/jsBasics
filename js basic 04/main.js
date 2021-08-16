@@ -11,21 +11,21 @@
 
 
 let str = "eden sonchev den, na pece mu se jadeshe sendvich od kaj bombata. Toj den pece ojde kaj bombata i si zede hot-dog oti sendvichite gi poskapija";
-/*
-console.log('prva pozicija',str.indexOf("sonchev"))
-console.log('posledna pozicija',str.lastIndexOf("den"))
+  /*
+  console.log('prva pozicija',str.indexOf("sonchev"))
+  console.log('posledna pozicija',str.lastIndexOf("den"))
 
 
-console.log('dali pochnuva so "eden"? - ', str.startsWith('eden'))
-console.log('dali zavrshuva so "tost"? - ', str.endsWith('tost'))
+  console.log('dali pochnuva so "eden"? - ', str.startsWith('eden '))
+  console.log('dali zavrshuva so "tost"? - ', str.endsWith('poskapija'))
 
 
-console.log(' search ',str.search('jadeshe'))
-console.log(' search + regex ',str.search(/kaj bomba.*i si/g))
+  console.log(' search ',str.search('jadeshe'))
+  console.log(' search + regex ',str.search(/kaj bomba.*i si/g))
 
 
-console.log(' barame sendvich - ', str.match(/jadeshe (.*?) od kaj/g))
-console.log(' ima tost?', str.includes('tost'))
+  console.log(' barame sendvich - ', str.match(/jadeshe (.*?) od kaj/g))
+  console.log(' ima tost?', str.includes('hot-dog'))
 */
 /**
 
@@ -41,13 +41,20 @@ let text = "Far far away, behind the word mountains, far from the countries Voka
  * Najdi kolku karakteri se iskoristeni
  * izbroj kolku zboroj se iskoristeni
  * */
+/*
+
+  let bezZapirki = text.replace(/,/g,'')
+  let beztochki = bezZapirki.replace(/\./g,'')
+  let poZbor = beztochki.split('.')
+  let recenici = text.split('.')
+console.log(
+ 
+  text.match(/\.|\,/g),text.length,poZbor,recenici
 
 
 
-
-
-
-
+)
+*/
 
 
 
@@ -67,30 +74,30 @@ let text = "Far far away, behind the word mountains, far from the countries Voka
 
 
 /*String templejtiranje so `` */
-/*
+
 let ime = "Stale";
-let prezime = "Popov";
+let prezime = "Topov";
 
 let tex = `Здраво ${ime}, ${prezime}!`;
 
+console.log(tex)
 
 
 let header = "Темплејти";
 let tags = ["javascript", "html", "templates"];
 
-let html = `<h2>${header}</h2><ul>`;
+let html = `<h2>Zdravo ${ime} ${prezime}</h2><ul>`;
+
 for (const x of tags) {
   html += `<li>${x}</li>`;
 }
-
 html += `</ul>`;
 
 
 console.log(html)
 document.querySelector('.templejtiran').innerHTML = html
-*/
-/*
+
+
 var sledenaLekcija = document.createElement('script')
 sledenaLekcija.src = 'numbers.js';
 document.getElementsByTagName('body')[0].appendChild(sledenaLekcija)
-*/

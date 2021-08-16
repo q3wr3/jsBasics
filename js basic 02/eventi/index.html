@@ -10,7 +10,7 @@
 	<span onclick="this.innerHTML = Date()">Klik za data</span>
 </div>
 <div>
-	<span class="data" onclick="prikazhiDatum()">Klik za data</span>
+	<span class="data" >Klik za data</span>
 </div>
 <div>
 	<span onclick="prikazhiDatum2(this)">Klik za data</span>
@@ -24,8 +24,8 @@
 		document.querySelector('.data').innerHTML = Date();
 	}
 
-	function prikazhiDatum2(e){
-		e.innerHTML = Date();
+	function prikazhiDatum2(spanDatum){
+		spanDatum.innerHTML = Date();
 	}
 
 
@@ -40,6 +40,13 @@
 		}
 		
 	}
+
+	document.querySelector('.data').addEventListener('mouseenter',prikazhiDatum())
+
+	/*document.querySelector('.data').addEventListener('click',function(e){
+		console.log(e.target)
+		e.target.innerHTML = Date();
+	})*/
 	/*=====================================================================*/
 
 	function me(){
@@ -50,6 +57,7 @@
 	}
 	function mu(){
 		console.log('mouseUp')
+		//console.log(getSelectedText())
 	}
 	function md(){
 		console.log('mouseDown')
@@ -59,10 +67,11 @@
 
 
 
-	document.addEventListener('keyup',(e) => {
-		console.log(e.key)
-		//getSelectedText()
-	})
+/*	document.addEventListener('keyup',(e) => {
+		e.preventDefault();
+		console.log(e)
+		
+	})*/
 
 	/*function getSelectedText() {
 	    if (window.getSelection) {
