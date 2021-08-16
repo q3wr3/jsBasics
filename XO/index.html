@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>XO</title>
+	<style type="text/css">
+		.container {
+			display: grid;
+			grid-template-columns: repeat(auto-fill,minmax(30%,1fr));
+			grid-gap: 10px;
+		}
+
+		.pole {
+			    background: lightcoral;
+			    border: 1px solid black;
+			    height: 300px;
+			    font-size: 250px;
+			    text-align: center;
+			}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="pole" p='1'></div>
+		<div class="pole" p='2'></div>
+		<div class="pole" p='3'></div>
+		<div class="pole" p='4'></div>
+		<div class="pole" p='5'></div>
+		<div class="pole" p='6'></div>
+		<div class="pole" p='7'></div>
+		<div class="pole" p='8'></div>
+		<div class="pole" p='9'></div>
+	</div>
+
+<script type="text/javascript">
+	
+
+	let nared = true;
+
+	document.querySelectorAll('.pole').forEach(function(el){
+		el.addEventListener('click', function(e) {
+		
+			if (e.target.innerHTML != '') return;
+
+			if (nared){
+				e.target.innerHTML = "X";
+			}else{
+				e.target.innerHTML = "O";
+			}
+
+			let o = nared ? 'X' : "O";
+			e.target.innerHTML = o;
+			nared = !nared;
+			proverka()
+		})
+	})
+
+
+	function proverka(){
+		
+		var pole1 = document.querySelector('[p="1"]')
+		var pole2 = document.querySelector('[p="2"]')
+		var pole3 = document.querySelector('[p="3"]')
+		var pole4 = document.querySelector('[p="4"]')
+		var pole5 = document.querySelector('[p="5"]')
+		var pole6 = document.querySelector('[p="6"]')
+		var pole7 = document.querySelector('[p="7"]')
+		var pole8 = document.querySelector('[p="8"]')
+		var pole9 = document.querySelector('[p="9"]')
+
+		if (check(pole1,pole2,pole3)){
+			pole1.style.backgroundColor = 'green'
+			pole2.style.backgroundColor = 'green'
+			pole3.style.backgroundColor = 'green'
+		}
+		if (check(pole4,pole5,pole6)){
+			pole4.style.backgroundColor = 'green'
+			pole5.style.backgroundColor = 'green'
+			pole6.style.backgroundColor = 'green'
+		}
+		if (check(pole7,pole8,pole9)){
+			pole7.style.backgroundColor = 'green'
+			pole8.style.backgroundColor = 'green'
+			pole9.style.backgroundColor = 'green'
+		}
+		if (check(pole1,pole4,pole7)){
+			pole1.style.backgroundColor = 'green'
+			pole4.style.backgroundColor = 'green'
+			pole7.style.backgroundColor = 'green'
+		}
+		if (check(pole2,pole5,pole8)){
+			pole5.style.backgroundColor = 'green'
+			pole2.style.backgroundColor = 'green'
+			pole8.style.backgroundColor = 'green'
+		}
+		if (check(pole3,pole6,pole9)){
+			pole9.style.backgroundColor = 'green'
+			pole6.style.backgroundColor = 'green'
+			pole3.style.backgroundColor = 'green'
+		}
+		if (check(pole1,pole5,pole9)){
+			pole1.style.backgroundColor = 'green'
+			pole5.style.backgroundColor = 'green'
+			pole9.style.backgroundColor = 'green'
+		}
+		if (check(pole7,pole5,pole3)){
+			pole7.style.backgroundColor = 'green'
+			pole5.style.backgroundColor = 'green'
+			pole3.style.backgroundColor = 'green'
+		}
+		
+	}
+	function check(x,y,z){
+		var px = x.innerHTML
+		var py = y.innerHTML
+		var pz = z.innerHTML
+		if ((px === py && py === pz) && px != "" && py != "" && pz != ""){
+			return true;
+		}
+	}
+</script>
+</body>
+</html>
