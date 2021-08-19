@@ -1,11 +1,12 @@
+/*
 let arr = ['kire','pece','spase','kole','cane']
-
+console.log(arr)
 let spoeno = arr.join(',')
 
 console.log(spoeno)
 
 
-/*
+
 
 let str = 'ovaj string ke go naprajme arej'
 
@@ -41,8 +42,8 @@ console.log(arrOdStr)
 
 
 /*====================================================================================================================*/
-/*
 
+/*
 let ovoshtija = ["Jabolka", "krushi", "praski", "kapini"];
 
 console.log(ovoshtija)
@@ -59,62 +60,67 @@ console.log(ovoshtija)
 delete ovoshtija[1]
 
 console.log(ovoshtija)
+
 console.log('se koristi samo vo ekstremni sluchai kaj sho strukturata na arejot mora da ostani ista...')
 
 
-ovoshtija.splice(0, 2);   // brishime od pochetna pozicija, broj na elementi
+/*ovoshtija.splice(2, 3);   // brishime od pochetna pozicija, broj na elementi
 console.log(ovoshtija)
 
 
-ovoshtija.splice(0, 2,'krushi','sijalici');   // brishime od pochetna pozicija, broj na elementi
+var ee = ['pece','kire']
+
+ovoshtija.splice(0, 2,...ee);   // brishime od pochetna pozicija, broj na elementi
 console.log(ovoshtija)
 
+var eden = ['prv']
 
-var spojka = arrOdStr.concat(ovoshtija, arr);
+var spojka = eden.concat(ovoshtija, ee);
 
 console.log(spojka)
 
-var novaSpojka = arrOdStr.concat("so nova vrednost"); 
+var novaSpojka = eden.concat("so nova vrednost"); 
 
 console.log(novaSpojka)
 
 
 
 // SLICE PRAJ NOV AREJ OD TOJ SHO GO SECHI a i concat...
-novaSpojka.slice(2);
+spojka.slice(2);
 
-console.log('secnat star',novaSpojka)
+console.log('secnat star',spojka)
 
-const secnat = novaSpojka.slice(2); //otstranuvame 2 elementi od pochetok
+const secnat = spojka.slice(2); //otstranuvame 2 elementi od pochetok
 
-console.log('secnat nov',secnat)
+//console.log('secnat nov',secnat)
 
 // Seckanje so pozicija ...
 
-const secnat2 = novaSpojka.slice(1,3); //otstranuvame od pozicija 1 do pozicija 3 BEZ 3tata pozicija... 
+const secnat2 = spojka.slice(1,4); //otstranuvame od pozicija 1 do pozicija 3 BEZ 3tata pozicija... 
 
 console.log('secnat nov',secnat2)
 
-console.log(novaSpojka.toString())
+console.log(spojka.toString())
 
-
+*/
 // Sortiranje
 
-let gajba = ['jabolko','krusha','mangoup','papaja','kashikara']
-console.log(gajba.sort())
-console.log(gajba.reverse())
+// let gajba = ['jabolko','krusha','mangoup','papaja','kashikara','ace']
+// console.log(gajba.reverse())
+// console.log(gajba.sort())
+
 
 
 
 // Numerichko sortiranje
-
-const points = [40, 100, 1, 5, 25, 10];
+/*
+const points = [40, 100, 2, 5, 25, 10];
 //mal -> golem
 console.log(points.sort(function(a, b){return a - b}))
 //golem -> mal
 console.log(points.sort(function(a, b){return b - a}))
 
-console.log(points.sort(function(a, b){return 0.5 - Math.random()}))
+console.log(points.sort(function(a, b){return Math.random() - 0.5  }))
 
 
 
@@ -130,6 +136,9 @@ function myArrayMin(arr) {
   return Math.min.apply(null, arr);
 }
 
+console.log(points.sort(function(a, b){return b - a})[points.length-1])
+
+
 console.log('max',myArrayMax(points),'min',myArrayMin(points))
 
 
@@ -138,20 +147,90 @@ const cars = [
   {type:"Saab", year:2001},
   {type:"BMW", year:2010}
 ];
+*/
+/* cars.sort(function(a, b){return a - b}); 
+ console.log(cars)*/
+/*
 
- cars.sort(function(a, b){return a.year - b.year}); 
- console.log(cars)
-
-
- cars.sort(function(a, b){
+ var sortot = cars.sort(function(a, b){
   let x = a.type.toLowerCase();
   let y = b.type.toLowerCase();
-  if (x < y) {return -1;}
-  if (x > y) {return 1;}
+  if (x < y) {return 1;}
+  if (x > y) {return -1;}
   return 0;
 }); 
- console.log(cars)
+ console.log('ss',cars)
+
+
 */
+
+/*
+var ell = ['goce','krume']
+var rez = proveri.some((item) => {
+  return ell.includes(item)
+})*/
+
+
+
+
+function proveri(val){
+  var prov = ['cane','kire','pece','stojna','paca']
+  var filtrirano = prov.filter((item) => {
+    return item.startsWith(val)
+  })
+  var target = document.querySelector('.rezultati');
+  target.innerHTML = "";
+  filtrirano.map((item) => {
+    var nov = document.createElement('div');
+    nov.innerHTML = item;
+    target.appendChild(nov)
+    console.log(Array.from(document.querySelector('.rezultati').children))
+  })
+}
+
+var obj = [
+  [1],[2,3],["3"],["4"],["5"]
+]
+
+var x = obj.reduce((accumulator, currentValue) => accumulator + currentValue)
+
+console.log(x)
+
+/*var rez = Object.entries(obj[1]).map(i => {
+  console.log(i[1])
+})*/
+
+console.log(Array.isArray([]))
+console.log(Array.isArray([1]))
+console.log(Array.isArray(new Array()))
+console.log(Array.isArray(new Array('a', 'b', 'c', 'd')))
+console.log(Array.isArray(new Array(3)))
+
+console.log(Array.isArray(Array.prototype))
+
+console.log(Array.isArray())
+console.log(Array.isArray({}))
+console.log(Array.isArray(null))
+console.log(Array.isArray(undefined))
+console.log(Array.isArray(17))
+console.log(Array.isArray('Array'))
+console.log(Array.isArray(true))
+console.log(Array.isArray(false))
+console.log(Array.isArray(new Uint8Array(32)))
+console.log(Array.isArray({ __proto__: Array.prototype }))
+
+
+
+function kiko(callback){
+  var x = var1 + var2;
+
+  callback(x)
+}
+
+kiko(function(x){
+  console.log(x)
+})
+
 
  /*
 Method 			Description
