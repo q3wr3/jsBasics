@@ -1,5 +1,5 @@
 
-let obj = {
+/*let obj = {
   ime: "Cane",
   prez: "Nikolovski",
   dvete: function() {
@@ -7,9 +7,11 @@ let obj = {
   }
 };
 
+
+
 console.log(obj.dvete())
-/*
-let obj2 = {
+*/
+/*let obj2 = {
   ime: "Cane",
   prez: "Nikolovski",
   dvete: function() {
@@ -48,14 +50,14 @@ let y = () => {
 	return 5;
 }
 
-let z = () => 5; //samo so 1 deklaracija na return vrednost
+let z = () => var x = 5; return x + 5; //samo so 1 deklaracija na return vrednost
 
 
 console.log(funkcija(),x(),y(),z())
 
-let xy = (ime) => "zdravo "+ ime;
+let xy = (ime,prezime,godini) => "zdravo "+ ime + prezime + godini;
 
-console.log(xy('pece'))
+console.log(xy('pece','peceski',10))
 
 
 var multi = {
@@ -65,34 +67,46 @@ var multi = {
 		brend : "bmw",
 		model : 'x15-ka',
 		potroshnja : {
-			gredska : 4,
+			gradska : 4,
 			selska	: 1
 		}
-	}
+	},
+	patiki : ['nike','javorki']
+
 }
 
 let rekurziva = (obj) => {
 	let rez = "";
 	for (x in obj){
 		if (typeof obj[x] === 'object' && obj[x] !== null){
-			rez += rekurziva(obj[x])
+			rez += x + "(" +rekurziva(obj[x]) + ")"
 		}else{
 			rez += x +' -> '+ obj[x] + " "
 		}
 	}
-
 	return rez;
-
 }
 
 console.log(rekurziva(multi))
 
 
+var pomaloOdPet = (broj) => {
+
+	if (broj < 5){
+		return broj;
+	}else{
+		broj -= 5
+		return pomaloOdPet(broj)
+	}
+}
+
+console.log(pomaloOdPet(20))
 
 
+*/
 
 
-class user {
+class user{
 	constructor(ime,prezime,godini){
 		this.ime = ime;
 		this.prezime = prezime;
@@ -107,7 +121,6 @@ console.log(chojk)
 
 
 class stepen{
-
 	constructor(skill,skolija,sertifikat,ime,prezime){
 		this.ime = ime;
 		this.prezime = prezime;
@@ -127,13 +140,21 @@ class stepen{
 }
 
 
+
+
 let pisulche = new stepen('javascript','kimicom','21489hj4132','pece','pecevski')
 
 console.log(pisulche.pecati())
 pisulche.smeniSkill('html')
-console.log(pisulche.pecati())*/
+console.log(pisulche.pecati())
 
 
+
+
+
+
+
+/*
 
 
 /*За домашно, форма за внесвање на продукти во продавница и листање по продавници на иститие
