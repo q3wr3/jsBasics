@@ -1,29 +1,35 @@
 let allTasks = {};
+
 let i = 0;
+
 class todo {
 	constructor(task,done,date){
 		this.task = task;
 		this.done = done;
-		this.time = date;
+		this.date = date;
 	}
 
-	isDone(done){
-		this.done = !done;
+	isDone(){
+		this.done = !this.done;
 	}
-
 
 }
 
 
 document.querySelector(".btnSaveNew").addEventListener('click',function(){
+
 	let newTask = document.querySelector('.newEntry').value
 	document.querySelector('.newEntry').value = ""
-	let nTask = new todo(newTask,false,Date())
+	const date = new Date();
+	var datum = date.getFullYear() +'-'+ (date.getMonth() + 1) +'-'+ (date.getDay() + 1)
+	let nTask = new todo(newTask,false,datum)
 	console.log(nTask)
 	allTasks[i] = nTask;
 	i++;
 	update()
 })
+
+
 
 function update() {
 	let target = document.querySelector('.siteTodo')
@@ -46,18 +52,23 @@ function update() {
 			isDone.checked = false;
 		}
 
-		/*var datumo = document.createElement('p')
-		datumo.innerHTML(allTasks[x].date)*/
-
+		var datumo = document.createElement('p')
+		datumo.innerHTML = allTasks[x].date
+		
 
 		taskot.appendChild(taskContent)
-		/*taskot.appendChild(datumo)*/
+		taskot.appendChild(datumo)
 		taskot.appendChild(isDone)
 		target.appendChild(taskot)
 	}
+
+	console.log(allTasks)
 }
+
+
 
 function updateTask(el) {
 	let id = el.parentNode.id
-	allTasks[id].isDone(allTasks[id].done)
+	allTasks[id].isDone()
+	console.log(allTasks)
 }
