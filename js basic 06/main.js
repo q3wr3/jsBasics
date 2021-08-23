@@ -132,3 +132,23 @@ let pisulche = new stepen('javascript','kimicom','21489hj4132','pece','pecevski'
 console.log(pisulche.pecati())
 pisulche.smeniSkill('html')
 console.log(pisulche.pecati())*/
+
+
+
+
+/*За домашно, форма за внесвање на продукти во продавница и листање по продавници на иститие
+
+	product
+		ime
+		opis
+		cena
+		kolichina
+
+	prodavnica
+		ime
+		lokacija
+		produkti
+
+
+
+*/
