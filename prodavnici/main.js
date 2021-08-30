@@ -1,18 +1,18 @@
-prodavnici = []; 
+prodavnici = [] 
 
 class Prodavnica{
     constructor(ime,lokacija,produkti){
-		this.ime = ime;
-		this.lokacija = lokacija;
-		this.produkti = produkti;
+		this.ime = ime
+		this.lokacija = lokacija
+		this.produkti = produkti
 	}
 }
 class Produkt {
 	constructor(ime,opis,cena,kolichina){
-		this.ime = ime;
-		this.opis = opis;
-		this.cena = cena;
-		this.kolichina = kolichina;
+		this.ime = ime
+		this.opis = opis
+		this.cena = cena
+		this.kolichina = kolichina
 	}
 
 }
@@ -20,9 +20,9 @@ class Produkt {
 
 document.querySelector(".btnProdavnica").addEventListener('click', function(){
     let prodavnicaIme = document.querySelector(".novaProdavnica").value
-    document.querySelector(".novaProdavnica").value ="";
+    document.querySelector(".novaProdavnica").value =""
     let prodavnicaLokacija = document.querySelector(".lokacija").value
-    document.querySelector(".lokacija").value ="";
+    document.querySelector(".lokacija").value =""
 
     
     let prodavnica = new Prodavnica(prodavnicaIme,prodavnicaLokacija,[])
@@ -36,14 +36,14 @@ document.querySelector(".btnProdavnica").addEventListener('click', function(){
 
 function update(){
     let target = document.querySelector(".siteProdavnici")
-    target.innerHTML = "";
+    target.innerHTML = ""
     // let target1 = document.querySelector("siteProdavnici .siteProdukti")
-    // target1.innerHTML = "";
+    // target1.innerHTML = ""
 
     for (x in prodavnici){
         var prodavnicata = document.createElement("div")
         prodavnicata.classList.add("prodavnica")
-        prodavnicata.id = 'prod'+x;
+        prodavnicata.id = 'prod'+x
 
         var prodavnicataContent = document.createElement('p')
         prodavnicataContent.innerHTML = "Име на продавница: " + prodavnici[x].ime
@@ -55,23 +55,28 @@ function update(){
         prodavnicata.appendChild(prodavnicataContent)
         prodavnicata.appendChild(lokacijata)
         
-        let produkti = prodavnici[x].produkti;
+        let produkti = prodavnici[x].produkti
         let novProduct = document.createElement('div')
         let productName = document.createElement('input')
+
         productName.type = 'text'
         productName.classList.add('novProdukt')
         novProduct.appendChild(productName)
+
 		let opis = document.createElement('input')
         opis.type = 'text'
         opis.classList.add('opis')
         novProduct.appendChild(opis)
+
 		let cena = document.createElement('input')
         cena.type = 'text'
         cena.classList.add('cena')
         novProduct.appendChild(cena)
+
 		let kolichina = document.createElement('input')
         kolichina.type = 'text'
         kolichina.classList.add('kolichina')
+
         novProduct.appendChild(kolichina)
 
         let addNew = document.createElement('button')
@@ -80,18 +85,18 @@ function update(){
         addNew.setAttribute('onclick','addProductot('+id+')')
         addNew.textContent = "OVDE"
         novProduct.appendChild(addNew)
-        novProduct.classList.add('addProduct');
+        novProduct.classList.add('addProduct')
         prodavnicata.appendChild(novProduct)
 
 
 
-        let prod = document.createElement('div');
-        prod.classList.add('produkti');
+        let prod = document.createElement('div')
+        prod.classList.add('produkti')
         for(j in produkti){
                 // var produktot = document.createElement("div")
                 // produktot.classList.add("produkt")
-                // produktot.id = j;
-                let singleProdukt = document.createElement('div');
+                // produktot.id = j
+                let singleProdukt = document.createElement('div')
                 singleProdukt.classList.add('singleProdukt')
 
                 var imeto = document.createElement('p')
@@ -109,7 +114,7 @@ function update(){
                 singleProdukt.appendChild(opisot)
                 singleProdukt.appendChild(cenata)
                 singleProdukt.appendChild(kolichinata)
-                prod.appendChild(singleProdukt);
+                prod.appendChild(singleProdukt)
 
         }
         prodavnicata.appendChild(prod)

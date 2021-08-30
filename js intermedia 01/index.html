@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tabs, Sliders and more</title>
+
+	<style type="text/css">
+		.tabs {
+		    width: 100%;
+		    height: 165px;
+		    position: relative;
+		}
+
+		.tab {
+		    padding: 1em;
+		    box-shadow: 1px 1px 2px;
+		    cursor: pointer;
+		}
+
+		.tabsWrapper {
+		    display: flex;
+		    justify-content: center;
+		    gap: 5px;
+		}
+		.tabsContentWrapper {
+			display: grid;
+			place-items: center;
+		}
+
+		.tabsContentWrapper div {
+			display: none;
+			width: 600px;
+			height: 100%;
+		}
+
+		.tabsContentWrapper div.active {
+			display: block;
+		}
+
+
+/*SLIDER*/
+		
+		.slider {
+			width: 400px;
+			height: 600px;
+			margin: auto;
+			overflow: hidden;
+		}
+
+		.slider img {
+			object-fit: cover;
+		}
+
+		.slider img {
+		    object-fit: cover;
+		    width: 100%;
+		    height: 100%;
+		}
+
+	</style>
+
+
+</head>
+<body>
+	<section class="tabs">
+		<div class="tabsWrapper">
+			<div class="tab" id='c1'>Prv Tab</div>
+			<div class="tab" id='c2'>Vtor Tab</div>
+			<div class="tab" id='c3'>Tret Tab</div>
+		</div>
+		<div class="tabsContentWrapper">
+			<div id='c1' class="active">11111111111, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div id='c2'>222222222222 dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div id='c3'>333333333333 dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+		</div>
+	</section>
+
+
+
+
+	<section class="slider">
+		<img src="img/prva.jpg">		
+		<img src="img/vtora.jpg">		
+		<img src="img/treta.jpg">		
+		<img src="img/cetvrta.jpg">		
+	</section>
+	<script src="main.js"></script>
+</body>
+</html>

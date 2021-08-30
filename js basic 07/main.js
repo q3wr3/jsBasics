@@ -31,20 +31,21 @@ function indent(){
 	]
 }
 
-// preporaka - posle sekoj statement (iskaz) zavrshete so ;  
+
+// preporaka - posle sekoj statement (iskaz) zavrshete so   
 // otvaranje na skope { da e vo ist red so iskazot za toj skope
-function toCelsius(fahrenheit) {
-  return (5 / 9) * (fahrenheit - 32);
+function toCelsius(fahrenhafdseit) {
+  return (5 / 9) * (fahrenheit - 32)
 }
 
-for (let i = 0; i < 5; i++) {
-  x += i;
+for (let i = 0; i < 5;i++) {
+  x += i
 }
 
 if (time < 20) {
-  str = "Dobrutro";
+  str = "Dobrutro"
 } else {
-  str = "Vecher";
+  str = "Vecher"
 }
 
 // generalni pravila
@@ -53,17 +54,17 @@ if (time < 20) {
 // koristi : i prezno mesto pred dodeluvanje vrednost na kluch
 // ne dodavaj zapirka posle posledniot element od objektot
 // zatvori go objetkot na nova linija (} na nov red sam ...)
-// sekogash iskazot da zavrshi so ;
+// sekogash iskazot da zavrshi so 
 
 const user = {
-  firstName: "Cane",
-  lastName: "Brzio",
-  age: 50,
-  eyeColor: "kakana"
-}; 
+  firstName   :   "Cane",
+  lastName    :   "Brzio",
+  age         :   50,
+  eyeColor    :   "kakana"
+} 
 
 // kondenziran nachin...
-const user = {firstName: "Cane", lastName: "Brzio", age: 50, eyeColor: "kakana"}; 
+const user = {firstName: "Cane", lastName: "Brzio", age: 50, eyeColor: "kakana"} 
 
 
 // Imenuvanje
@@ -71,7 +72,7 @@ const user = {firstName: "Cane", lastName: "Brzio", age: 50, eyeColor: "kakana"}
 // globalni promenlivi so CAPS (site golemi bukvi)
 // klasi so prva Golema bukva (Pascal Case)
 
-class Prodavnica {
+class ProdavnicaZaIgrachki {
 
 }
 
@@ -86,10 +87,10 @@ class Prodavnica {
 
 /*inicijalizacija na varijabli*/
 
-let x,y,z; // losho
+let x,y,z // losho
 
-let q = '';
-let w = 0;
+let q = ''
+let w = 0
 let arr = []
 let obj = {}
 
@@ -116,22 +117,24 @@ ar = 5 // nema da se dozvoli
 
 /*Koristi === za sporedba*/
 
-0 == "";        // true
-1 == "1";       // true
-1 == true;      // true
+0 == ""        // true
+1 == "1"       // true
+1 == true      // true
 
-0 === "";       // false
-1 === "1";      // false
-1 === true;     // false 
+0 === ""       // false
+1 === "1"      // false
+1 === true     // false 
 
 
 /*koristi defoltni parametri*/
 
 function myFunction(x, y) {
   if (y === undefined) {
-    y = 0;
+    y = 0
   }
 }
+
+
 
 function myFunc(x,y){
 	y = y || 0
@@ -142,28 +145,28 @@ function myFunc(x,y){
 
 switch (new Date().getDay()) {
   case 0:
-    day = "Sunday";
-    break;
+    day = "Sunday"
+    break
   case 1:
-    day = "Monday";
-    break;
+    day = "Monday"
+    break
   case 2:
-    day = "Tuesday";
-    break;
+    day = "Tuesday"
+    break
   case 3:
-    day = "Wednesday";
-    break;
+    day = "Wednesday"
+    break
   case 4:
-    day = "Thursday";
-    break;
+    day = "Thursday"
+    break
   case 5:
-    day = "Friday";
-    break;
+    day = "Friday"
+    break
   case 6:
-    day = "Saturday";
-    break;
+    day = "Saturday"
+    break
   default:
-    day = "Drugiden";
+    day = "Drugiden"
 }
 
 
