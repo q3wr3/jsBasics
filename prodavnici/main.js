@@ -6,6 +6,20 @@ class Prodavnica{
 		this.lokacija = lokacija
 		this.produkti = produkti
 	}
+
+    addProduct(ime,opis,cena,kolichina){
+        var novProduct = new Produkt(ime,opis,cena,kolichina)
+        this.produkti.push(novProduct)
+    }
+
+    updateProduct(data){
+        var {id,ime,opis,cena,kolichina} = data;
+        this.produkti[id].ime = ime;
+        this.produkti[id].opis = opis;
+        this.produkti[id].cena = cena;
+        this.produkti[id].kolichina = kolichina;
+    }
+
 }
 class Produkt {
 	constructor(ime,opis,cena,kolichina){
@@ -35,12 +49,14 @@ document.querySelector(".btnProdavnica").addEventListener('click', function(){
 
 
 function update(){
+
     let target = document.querySelector(".siteProdavnici")
     target.innerHTML = ""
     // let target1 = document.querySelector("siteProdavnici .siteProdukti")
     // target1.innerHTML = ""
-
+    console.log('startUpdateValue',prodavnici)
     for (x in prodavnici){
+
         var prodavnicata = document.createElement("div")
         prodavnicata.classList.add("prodavnica")
         prodavnicata.id = 'prod'+x
@@ -132,8 +148,9 @@ function addProductot(id) {
     let opisNaProdukt = proddd.querySelector(".opis").value
     let cena = proddd.querySelector(".cena").value
     let kolichina = proddd.querySelector(".kolichina").value
-    let produkt = new Produkt(imeNaProdukt,opisNaProdukt,cena,kolichina)
+    //let produkt = new Produkt(imeNaProdukt,opisNaProdukt,cena,kolichina)
 
-    prodavnici[id].produkti.push(produkt)
+    prodavnici[id].addProduct(imeNaProdukt,opisNaProdukt,cena,kolichina);
+
     update()
 }
