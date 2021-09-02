@@ -9,6 +9,7 @@
 			overflow-x: hidden;
 			padding: 0;
 			margin: 0;
+			font-family: arial;
 
 		}
 		.hero {
@@ -24,8 +25,8 @@
 		    height: 100%;
 		    display: grid;
 		    grid-template-columns: repeat(4,100%);
-		    transition: .6s;
-		    left: 0;
+		    transition: all .6s;
+		    position: relative;
 		}
 
 		.nav {
@@ -68,7 +69,7 @@
 		<div class="nav navPrev"><span><</span></div>
 		<div class="slides">
 			<div class="slide active"  style="background:green;">
-				<div class="title">Slide 1</div>
+				<div class="title"><div class="title"><h1>Welcome</h1></div><div class="desc">This is a hero slider</div></div>
 			</div>
 			<div class="slide"  style="background:orange;">
 				<div class="title">Slide 2</div>
