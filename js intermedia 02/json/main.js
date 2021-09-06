@@ -29,6 +29,36 @@ var users = [
 		isActive : 1,
 		url		 : 'https://github.com/q3wr3'
 	},
+	{	
+		name 	: 'marko',
+		lname 	: 'Tolevski',
+		id 		: 1,
+		skills 	: {
+			html 	: 1,
+			css 	: 2,
+			js 		: 3,
+			php 	: 4,
+			mySql   : 5,
+			node 	: 6
+
+		},
+		projects : [
+			{
+				name: 'slider',
+				description : 'makes the slider move like jager',
+				usedSkills : [0,1,2],
+				link	: ''
+			},
+			{
+				name: 'tic-tak-toe',
+				description : 'simple game',
+				usedSkills : [0,1,2],
+				link	: ''
+			},
+		],
+		isActive : 1,
+		url		 : 'https://github.com/q3wr3'
+	},
 ]
 
 
@@ -53,3 +83,10 @@ console.log(theUsers[0].name)
 
 
 */
+
+fetch('localhost/contact',{
+	method: "POST",
+	body : JSON.stringify()
+})
+.then(rez => rez.json())
+.then(rez => console.log(rez)) 
