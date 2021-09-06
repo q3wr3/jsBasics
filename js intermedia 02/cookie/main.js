@@ -1,11 +1,16 @@
-
+var hasCookie = checkCookie("user");
+if(hasCookie){
+	var cookieData = JSON.parse(hasCookie)
+	document.querySelector('.ime').value = cookieData.ime
+	document.querySelector('.pre').value = cookieData.pre
+}
 
 document.querySelector('.submit').addEventListener('click',function(){
 	let ime = document.querySelector('.ime').value
 	let pre = document.querySelector('.pre').value
 	let user = {
-		ime,
-		pre
+		ime:ime,
+		pre:pre
 	}
 	let data = JSON.stringify(user) 
 	setCookie('user',data,1)
@@ -18,7 +23,7 @@ function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;SameSite=None; Secure";
 }
 
 function getCookie(cname) {
